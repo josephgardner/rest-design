@@ -1,4 +1,4 @@
-```plantuml
+@startuml
 
 digraph structs {
     graph [
@@ -74,4 +74,5 @@ digraph structs {
     issue -> issue [label=<close<sup>(ui)</sup>>, headlabel=<<sub>?</sub>>, labelangle=-35, labeldistance=1.5]
     issue:s -> issue:s [label=<update<sup>(un)</sup>>, headlabel=<<sub>?</sub>>, labelangle=-35, labeldistance=1.5]
 }
-```
+
+@enduml
