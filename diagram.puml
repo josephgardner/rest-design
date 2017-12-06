@@ -61,7 +61,7 @@ digraph structs {
     issues:nw -> issues [label=<search{?searchtext}<sup>(si)</sup>>, headlabel=<<sub>1</sub>>, labelangle=35, labeldistance=1.5]
     issues:ne -> issues [label=<create<sup>(un)</sup>>, headlabel=<<sub>1</sub>>, labelangle=-35, labeldistance=1.5]
     
-    issues -> issue [label=< issue<sup>(si)</sup>>, headlabel=<<sub>*</sub>>, labelangle=35, labeldistance=1.5]
+    issues -> issue [label=< item<sup>(si)</sup>>, headlabel=<<sub>*</sub>>, labelangle=35, labeldistance=1.5]
 
     issue:nw -> issue [label=<open<sup>(un)</sup>>, headlabel=<<sub>?</sub>>, labelangle=35, labeldistance=1.5]
     issue:ne -> issue [label=<close<sup>(un)</sup>>, headlabel=<<sub>?</sub>>, labelangle=-35, labeldistance=1.5]
