@@ -55,23 +55,22 @@ digraph structs {
         issue [label=<
         <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" COLOR="black">
         <TR><TD bgcolor="black"><font color="white">Issue</font></TD></TR>
-        <TR><TD ALIGN="LEFT">id</TD></TR>
-        <TR><TD ALIGN="LEFT">title</TD></TR>
-        <TR><TD ALIGN="LEFT">(description)</TD></TR>
-        <TR><TD ALIGN="LEFT">status</TD></TR>
+        <TR><TD ALIGN="LEFT">Title</TD></TR>
+        <TR><TD ALIGN="LEFT">Status</TD></TR>
+        <TR><TD ALIGN="LEFT">(Description)</TD></TR>
         </TABLE>>];
     }
 
     start -> home
     home -> issues [label=< issues<sup>(si)</sup>>, headlabel=<<sub>1</sub>>, labelangle=35, labeldistance=1.5]
 
-    issues:nw -> issues [label=<search{?q}<sup>(si)</sup>>, headlabel=<<sub>1</sub>>, labelangle=35, labeldistance=1.5]
+    issues:nw -> issues [label=<search{?searchtext}<sup>(si)</sup>>, headlabel=<<sub>1</sub>>, labelangle=35, labeldistance=1.5]
     issues:ne -> issues [label=<create<sup>(un)</sup>>, headlabel=<<sub>1</sub>>, labelangle=-35, labeldistance=1.5]
     
     issues -> issue [label=< issue<sup>(si)</sup>>, headlabel=<<sub>*</sub>>, labelangle=35, labeldistance=1.5]
 
-    issue:w -> issue [label=<open<sup>(ui)</sup>>, headlabel=<<sub>?</sub>>, labelangle=35, labeldistance=1.5]
-    issue -> issue [label=<close<sup>(ui)</sup>>, headlabel=<<sub>?</sub>>, labelangle=-35, labeldistance=1.5]
+    issue:w -> issue [label=<open<sup>(un)</sup>>, headlabel=<<sub>?</sub>>, labelangle=35, labeldistance=1.5]
+    issue -> issue [label=<close<sup>(un)</sup>>, headlabel=<<sub>?</sub>>, labelangle=-35, labeldistance=1.5]
     issue:s -> issue:s [label=<update<sup>(un)</sup>>, headlabel=<<sub>?</sub>>, labelangle=-35, labeldistance=1.5]
 }
 
