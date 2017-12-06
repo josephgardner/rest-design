@@ -69,8 +69,8 @@ digraph structs {
     
     issues -> issue [label=< issue<sup>(si)</sup>>, headlabel=<<sub>*</sub>>, labelangle=35, labeldistance=1.5]
 
-    issue:w -> issue [label=<open<sup>(un)</sup>>, headlabel=<<sub>?</sub>>, labelangle=35, labeldistance=1.5]
-    issue -> issue [label=<close<sup>(un)</sup>>, headlabel=<<sub>?</sub>>, labelangle=-35, labeldistance=1.5]
+    issue:nw -> issue [label=<open<sup>(un)</sup>>, headlabel=<<sub>?</sub>>, labelangle=35, labeldistance=1.5]
+    issue:ne -> issue [label=<close<sup>(un)</sup>>, headlabel=<<sub>?</sub>>, labelangle=-35, labeldistance=1.5]
     issue:s -> issue:s [label=<update<sup>(un)</sup>>, headlabel=<<sub>?</sub>>, labelangle=-35, labeldistance=1.5]
 }
 
