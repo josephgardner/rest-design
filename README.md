@@ -1,5 +1,3 @@
-# REST API Diagram 
-
 This repo attempts to model the sample [webapibook/issuetracker](https://github.com/webapibook/issuetracker) REST API. 
 
 The `issuetracker` was chosen because it provides a simple example of a Web API that conforms to the contraints of REST.
