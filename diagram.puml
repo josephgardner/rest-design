@@ -2,58 +2,58 @@
 
 digraph structs {
     graph [
-    splines=true;
-    sep="+25,25";  
-    overlap=scalexy;
-    nodesep=0.4;
+        splines=true;
+        sep="+25,25";  
+        overlap=scalexy;
+        nodesep=0.4;
     ]
 
     node [shape = point ]; start
     node [
-    shape=plain 
-    nodesep=.15 
-    color="white" 
-    margin=0 
-    height=0 
-    width=0
+        shape=plain 
+        nodesep=.15 
+        color="white" 
+        margin=0 
+        height=0 
+        width=0
     ]
 
     subgraph cluster_0 {
         graph [style=invis;]
 
         node [
-        fontsize=8 
-        fontname="tahoma"
+            fontsize=8 
+            fontname="tahoma"
         ];
 
         legend [label=<
-        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" COLOR="gray">
-        <TR><TD COLSPAN="2">Legend</TD></TR>
-        <TR><TD>1</TD><TD ALIGN="LEFT">exactly 1</TD></TR>
-        <TR><TD>?</TD><TD ALIGN="LEFT">0 or 1</TD></TR>
-        <TR><TD>*</TD><TD ALIGN="LEFT">0 or more</TD></TR>
-        <TR><TD>+</TD><TD ALIGN="LEFT">1 or more</TD></TR>
-        <TR><TD>(si)</TD><TD ALIGN="LEFT">safe, idempotent</TD></TR>
-        <TR><TD>(ui)</TD><TD ALIGN="LEFT">unsafe, idempotent</TD></TR>
-        <TR><TD>(un)</TD><TD ALIGN="LEFT">unsafe, non-idempotent</TD></TR>
-        </TABLE>>];
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" COLOR="gray">
+                <TR><TD COLSPAN="2">Legend</TD></TR>
+                <TR><TD>1</TD><TD ALIGN="LEFT">exactly 1</TD></TR>
+                <TR><TD>?</TD><TD ALIGN="LEFT">0 or 1</TD></TR>
+                <TR><TD>*</TD><TD ALIGN="LEFT">0 or more</TD></TR>
+                <TR><TD>+</TD><TD ALIGN="LEFT">1 or more</TD></TR>
+                <TR><TD>(si)</TD><TD ALIGN="LEFT">safe, idempotent</TD></TR>
+                <TR><TD>(ui)</TD><TD ALIGN="LEFT">unsafe, idempotent</TD></TR>
+                <TR><TD>(un)</TD><TD ALIGN="LEFT">unsafe, non-idempotent</TD></TR>
+            </TABLE>>];
     }
 
     subgraph cluster_1 {
         graph [style=invis;]
 
         issues [label=<
-        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" COLOR="black">
-        <TR><TD bgcolor="black"><font color="white">Issues</font></TD></TR>
-        </TABLE>>];
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" COLOR="black">
+                <TR><TD bgcolor="black"><font color="white">Issues</font></TD></TR>
+            </TABLE>>];
 
         issue [label=<
-        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" COLOR="black">
-        <TR><TD bgcolor="black"><font color="white">Issue</font></TD></TR>
-        <TR><TD ALIGN="LEFT">Title</TD></TR>
-        <TR><TD ALIGN="LEFT">Status</TD></TR>
-        <TR><TD ALIGN="LEFT">(Description)</TD></TR>
-        </TABLE>>];
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" COLOR="black">
+                <TR><TD bgcolor="black"><font color="white">Issue</font></TD></TR>
+                <TR><TD ALIGN="LEFT">Title</TD></TR>
+                <TR><TD ALIGN="LEFT">Status</TD></TR>
+                <TR><TD ALIGN="LEFT">(Description)</TD></TR>
+            </TABLE>>];
     }
 
     start -> issues
