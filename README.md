@@ -12,4 +12,4 @@ The `issuetracker` was chosen because it provides a simple example of a Web API 
 1. Create consumer-driven contracts that are validated by the API specification.
 1. Generate a mock server from the consumer-driven contracts.
 
-![diagram](http://www.plantuml.com/plantuml/proxy?idx=0&src=https://raw.githubusercontent.com/josephgardner/rest-design/master/diagram.puml?rev=5 "state machine")
+![diagram](http://www.plantuml.com/plantuml/proxy?idx=0&src=https://raw.githubusercontent.com/josephgardner/rest-design/master/diagram.puml?rev=6 "state machine")
