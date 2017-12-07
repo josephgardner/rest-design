@@ -1,0 +1,98 @@
+{
+    "$id": "https://example.com/schemas/issue",
+    "$schema": "http://json-schema.org/draft-07/hyper-schema#",
+    "base": "https://example.com/api/",
+    "title": "Issue Tracker",
+    "definitions": {
+        "issue": {
+            "type": "object",
+            "required": ["title", "status"],
+            "properties": {
+                "id": {
+                    "description": "Server-assigned unique identifier; will always be present once assigned during creation",
+                    "type": "integer",
+                    "minimum": 1,
+                    "readOnly": true
+                },
+                "title": {"type": "string"},
+                "status": {
+                    "type": "string",
+                    "enum": ["Open", "Closed"],
+                    "default": "Open"
+                },
+                "description": {"type": "string"}
+            },
+            "links": [
+                {
+                    "description": "",
+                    "rel": "self",
+                    "href": "issue/{id}",
+                    "templateRequired": ["id"],
+                    "targetSchema": {"$ref": "#/definitions/issue"},
+                    "targetHints": {
+                        "allow": ["GET", "PUT"]
+                    }
+                },
+                {
+                    "description": "",
+                    "rel": "collection",
+                    "href": "issue{?searchtext}",
+                    "hrefSchema": {
+                        "title": "Search interface for Issues",
+                        "type": "object",
+                        "properties": {
+                            "searchtext": {
+                                "title":  "search",
+                                "description": "Text to match against Issue Title and Description",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "targetSchema": {"$ref": "#/definitions/issueCollection"},
+                    "targetHints": {
+                        "allow": ["GET", "POST"]
+                    },
+                    "submissionSchema": {
+                        "title": "New Issue representation",
+                        "description": "Issue creation with server-assigned id",
+                        "allOf": [{"$ref": "#"}]
+                    }
+                }
+            ]
+        },
+        "issueCollection": {
+            "type": "array",
+            "items": {
+                "allOf": [
+                    {"$ref": "#/definitions/issue"},
+                    {
+                        "links": {
+                            "$comment": "Similar to the individual issue \"self\" link, but the context of an \"item\" link must be the containing collection.  So the anchorPointer points to the collection instance root, while \"self\" does not need an anchor adjustment",
+                            "rel": "item",
+                            "anchorPointer": "",
+                            "href": "issue/{id}",
+                            "templateRequired": ["id"],
+                            "targetSchema": {"$ref": "#/defintions/issue"},
+                            "targetHints": ["GET", "PUT"]
+                        }
+                    }
+                ]
+            },
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "issue",
+                    "targetSchema": {"$ref": "#/definitions/issueCollection"},
+                    "targetHints": {
+                        "allow": ["GET", "POST"]
+                    },
+                    "submissionSchema": {
+                        "title": "New Issue representation",
+                        "description": "Issue creation with server-assigned id",
+                        "allOf": [{"$ref": "#/definitions/issue"}]
+                    }
+                }
+            ]
+        }
+    }
+}
